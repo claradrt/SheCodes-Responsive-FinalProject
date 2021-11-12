@@ -7,6 +7,11 @@ font-family: 'Poppins', sans-serif;*/
   --primary-color: #181a39;
   --secondary-color: #f76c67;
   --font-color: white;
+  --button-gradient: linear-gradient(
+    90deg,
+    rgba(247, 108, 103, 1) 0%,
+    rgba(253, 81, 148, 1) 100%
+  );
 }
 
 body {
@@ -44,23 +49,53 @@ h3 {
   color: black;
 }
 
+.s2 .container h2 {
+  color: #181a39;
+}
+
 .presentation-text {
   color: #aaaeb1;
 }
 .contact-btn {
   border-radius: 4px;
-  background: linear-gradient(
-    90deg,
-    rgba(247, 108, 103, 1) 0%,
-    rgba(253, 81, 148, 1) 100%
-  );
+  background: var(--button-gradient);
   color: var(--font-color);
   font-family: var(--paragraph-font);
   text-decoration: none;
 }
 
+.contact-btn:hover,
+.card-btn:hover {
+  color: white;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.card {
+  width: 100%;
+  border: 1px solid var(--primary-color);
+}
+
+.card-btn {
+  background: linear-gradient(
+    90deg,
+    rgba(24, 26, 57, 1) 0%,
+    rgba(14, 62, 136, 1) 100%
+  );
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: var(--paragraph-font);
+}
+
 @media (max-width: 600px) {
   .presentation-img {
     display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 50px;
   }
 }
