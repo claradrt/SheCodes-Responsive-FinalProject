@@ -5,7 +5,7 @@ font-family: 'Poppins', sans-serif;*/
   --title-font: "Playfair Display", serif;
   --paragraph-font: "Poppins", sans-serif;
   --primary-color: #181a39;
-  --secondary-color: #f76c67;
+  --secondary-color: #f76a6a;
   --font-color: white;
   --button-gradient: linear-gradient(
     90deg,
@@ -26,6 +26,7 @@ h3 {
 
 h1 {
   font-size: 70px;
+  color: white;
 }
 
 h2 {
@@ -53,11 +54,18 @@ h3 {
   color: #181a39;
 }
 
-.presentation-text {
-  color: #aaaeb1;
+.presentation-text,
+.presentation-text a {
   font-family: var(--paragraph-font);
+  text-decoration: none;
 }
-.contact-btn {
+
+.presentation-text a:hover {
+  text-decoration: underline;
+  color: var(--secondary-color);
+}
+
+.btn {
   border-radius: 4px;
   background: var(--button-gradient);
   color: var(--font-color);
@@ -65,7 +73,7 @@ h3 {
   text-decoration: none;
 }
 
-.contact-btn:hover,
+.btn:hover,
 .card-btn:hover {
   color: white;
   text-decoration: none;
@@ -99,6 +107,22 @@ h3 {
 .programming-skills-list {
   background-color: #14234d;
   width: 90%;
+}
+
+.highlight {
+  color: var(--secondary-color);
+}
+
+.project-description {
+  color: #aaaeb1;
+}
+
+.project-description a {
+  text-decoration: none;
+}
+
+.project-description a:hover {
+  color: var(--secondary-color);
 }
 
 @media (max-width: 600px) {
