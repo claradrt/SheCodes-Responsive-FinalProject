@@ -125,6 +125,25 @@ h3 {
   color: var(--secondary-color);
 }
 
+.contact-section {
+  padding: 10px;
+  width: fit-content;
+}
+.contact-section p {
+  color: #aaaeb1;
+}
+
+.contact-section a {
+  font-size: 46px;
+  font-family: var(--title-font);
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 600px) {
   .presentation-img {
     display: none;
