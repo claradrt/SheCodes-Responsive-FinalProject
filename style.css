@@ -20,7 +20,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--title-font);
 }
 
@@ -84,15 +85,12 @@ h3 {
   width: 100%;
   border: 1px solid #c8cfd2;
   font-family: var(--paragraph-font);
+  color: var(--primary-color);
 }
 
 .card-btn {
-  background: linear-gradient(
-    90deg,
-    rgba(24, 26, 57, 1) 0%,
-    rgba(14, 62, 136, 1) 100%
-  );
-  color: white;
+  background: #fdebeb;
+  color: var(--secondary-color);
   border-radius: 4px;
   text-decoration: none;
   font-family: var(--paragraph-font);
@@ -131,6 +129,7 @@ h3 {
 }
 .contact-section p {
   color: #aaaeb1;
+  font-family: var(--paragraph-font);
 }
 
 .contact-section a {
@@ -144,6 +143,26 @@ h3 {
   text-decoration: underline;
 }
 
+.contact-box {
+  width: 40%;
+  margin: 50px auto 10px auto;
+  text-align: center;
+  /*background-color: #fdebeb;*/
+  background-color: #c7e6f5;
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+
+.contact-box h4 {
+  font-size: 30px;
+  color: var(--primary-color);
+}
+.contact-box p {
+  color: #4d4d4f;
+  font-family: var(--paragraph-font);
+  margin-bottom: 0;
+}
+
 @media (max-width: 600px) {
   .presentation-img {
     display: none;
@@ -153,5 +172,9 @@ h3 {
 @media (max-width: 800px) {
   h1 {
     font-size: 50px;
+  }
+
+  .contact-box {
+    width: 90%;
   }
 }
