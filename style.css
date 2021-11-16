@@ -145,7 +145,7 @@ h3 {
 
 .contact-box {
   width: 40%;
-  margin: 50px auto 10px auto;
+  margin: 30px auto 10px auto;
   text-align: center;
   /*background-color: #fdebeb;*/
   background-color: #c7e6f5;
@@ -183,5 +183,21 @@ h3 {
 
   .contact-box {
     width: 90%;
+  }
+
+  .contact-section a {
+    font-size: 20px;
+  }
+
+  .presentation-text {
+    text-align: center;
+  }
+
+  .footer-separation {
+    margin: 10px auto;
+  }
+
+  .project-preview {
+    margin-bottom: 10px;
   }
 }
