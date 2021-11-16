@@ -171,6 +171,18 @@ h3 {
   color: #aaaeb1;
 }
 
+.open-source-paragraph {
+  padding-top: 10px;
+  font-family: var(--paragraph-font);
+  font-size: 14px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.open-source-paragraph a {
+  color: var(--secondary-color);
+}
+
 @media (max-width: 600px) {
   .presentation-img {
     display: none;
