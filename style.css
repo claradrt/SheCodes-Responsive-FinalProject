@@ -79,6 +79,11 @@ h3 {
   color: var(--paragraph-font-color);
 }
 
+.presentation-text,
+.project-description {
+  text-align: justify;
+}
+
 .presentation-text a {
   text-decoration: none;
 }
@@ -181,10 +186,9 @@ h3 {
 }
 
 .contact-box {
-  width: 40%;
+  max-width: 375px;
   margin: 30px auto 10px auto;
   text-align: center;
-  /*background-color: #c7e6f5 ;*/
   background-color: var(--tertiary-color);
   border-radius: 4px;
   padding: 10px 15px;
@@ -227,10 +231,6 @@ h3 {
     font-size: 50px;
   }
 
-  .contact-box {
-    width: 90%;
-  }
-
   .contact-section a {
     font-size: 20px;
   }
@@ -245,5 +245,11 @@ h3 {
 
   .project-preview {
     margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .programming-skills-list {
+    width: 50%;
   }
 }
