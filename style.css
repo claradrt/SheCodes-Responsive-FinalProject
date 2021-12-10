@@ -186,9 +186,10 @@ h3 {
 }
 
 .contact-box {
-  max-width: 375px;
+  max-width: 450px;
   margin: 30px auto 10px auto;
   text-align: center;
+  /*background-color: #c7e6f5 ;*/
   background-color: var(--tertiary-color);
   border-radius: 4px;
   padding: 10px 15px;
@@ -229,6 +230,15 @@ h3 {
 @media (max-width: 800px) {
   h1 {
     font-size: 50px;
+  }
+
+  .contact-box {
+    width: 90%;
+  }
+
+  .contact-box .btn {
+    max-width: 150px;
+    margin: 0 auto;
   }
 
   .contact-section a {
