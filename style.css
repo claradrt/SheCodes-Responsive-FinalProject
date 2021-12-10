@@ -144,6 +144,23 @@ h3 {
   color: var(--secondary-color);
 }
 
+.resume-wrapper {
+  text-align: center;
+}
+
+.resume-link {
+  text-decoration: none;
+  color: white;
+}
+
+.resume-link i {
+  color: var(--secondary-color);
+}
+
+.resume-link:hover {
+  color: var(--secondary-color);
+}
+
 .contact-section {
   padding: 10px;
   width: fit-content;
