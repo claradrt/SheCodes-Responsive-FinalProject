@@ -146,11 +146,14 @@ h3 {
 
 .resume-wrapper {
   text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 3px 8px;
 }
 
 .resume-link {
   text-decoration: none;
-  color: white;
+  color: var(--secondary-color);
 }
 
 .resume-link i {
