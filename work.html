@@ -28,6 +28,8 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="https://unpkg.com/vue@3"></script>
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -74,261 +76,44 @@
         </ul>
       </div>
     </nav>
-    <div class="container">
+    <div class="container" id="work">
       <h2 class="text-white text-center">Here are some of my past projects</h2>
-      <div class="row mt-5">
-        <div class="col-md-6 project-preview my-auto">
-          <img
-            src="images/beer-party.png"
-            alt="Picture of weather app project"
-            class="rounded img-fluid"
-          />
+      <div class="row mt-3" v-for="(project,index) in projects" :key="index">
+        <div
+          class="col-md-6 project-preview my-auto"
+          :class="{'order-md-last': index%2}"
+        >
+          <a
+            :href="project.link.href"
+            target="_blank"
+            :title="project.link.title"
+          >
+            <div class="img-wrapper">
+              <img
+                :src="project.img.src"
+                :alt="project.img.alt"
+                class="rounded img-fluid d-block"
+              />
+              <div class="open-project">
+                <i class="fas fa-eye"></i>
+              </div>
+            </div>
+          </a>
         </div>
         <div class="col-md-6 my-auto">
-          <h3 class="text-white">Beer party website</h3>
+          <h3 class="text-white project-title">{{project.name}}</h3>
           <br />
-          <p class="project-description">
-            This webapp destined to people who don't know much about beers
-            consists of presenting a list of beers gathered from the
-            <a
-              href="https://punkapi.com/documentation/v2"
-              target="_blank"
-              class="highlight"
-              title="Punk api documentation"
-              >Punk Api</a
-            >
-            and present their corresponding caracteristics.
-          </p>
-          <span class="tech-tag">Angular</span>
-          <span class="tech-tag">Typescript</span>
-          <span class="tech-tag">Bootstrap</span>
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">Javascript</span>
-          <span class="tech-tag">API</span>
+          <p class="project-description" v-html="project.description"></p>
+          <span class="tech-tag" v-for="tag of project.tags">{{tag}}</span>
           <div class="btn-wrapper text-center">
             <a
-              href="https://vigilant-shannon-f82b4f.netlify.app/home"
+              :href="project.link.href"
               target="_blank"
               class="d-inline-block btn px-4 py-2 my-3"
-              title="Open beer party project"
+              :title="project.link.title"
               >See project</a
             >
           </div>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-md-6 my-auto">
-          <h3 class="text-white">Vocabulary quiz app</h3>
-          <br />
-          <p class="project-description">
-            This is a personal project and so far the biggest React application
-            I have worked on. This application is destined to language learners
-            who are trying to learn some new vocabulary. This app enables them
-            to list the vocabluary words they are trying to remember, and to
-            then get quizzed on those words. <br />
-            I used
-            <a
-              href="https://mui.com/"
-              target="_blank"
-              class="highlight"
-              title="MUI website"
-              >MUI</a
-            >
-            as a React UI library.
-          </p>
-          <span class="tech-tag">React</span>
-          <span class="tech-tag">Bootstrap</span>
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">Javascript</span>
-          <div class="btn-wrapper text-center">
-            <a
-              href="https://dreamy-hopper-e5f17f.netlify.app/"
-              target="_blank"
-              class="d-inline-block btn px-4 py-2 my-3"
-              title="Open Dictionary project"
-              >See project</a
-            >
-          </div>
-        </div>
-        <div class="col-md-6 project-preview my-auto">
-          <img
-            src="images/vocabulary-quiz-app.png"
-            alt="Picture of weather app project"
-            class="rounded img-fluid"
-          />
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-md-6 project-preview my-auto">
-          <img
-            src="images/dictionary-react.png"
-            alt="Picture of weather app project"
-            class="rounded img-fluid"
-          />
-        </div>
-        <div class="col-md-6 my-auto">
-          <h3 class="text-white">Dictionary app</h3>
-          <br />
-          <p class="project-description">
-            As part of the
-            <a
-              href="https://www.shecodes.io/workshops"
-              target="_blank"
-              class="highlight"
-              title="SheCodes workshops"
-              >SheCodes React workshop</a
-            >, I created a dictionary app based in React and Bootstrap. It uses
-            information from 2 open-source APIs:
-            <a
-              href="https://dictionaryapi.dev/"
-              target="_blank"
-              class="highlight"
-              title="Free Dictionary Api"
-              >Free Dictionary Api</a
-            >
-            for the definitions and
-            <a
-              href="https://www.pexels.com/api/documentation/"
-              target="_blank"
-              class="highlight"
-              title="Pexels Api"
-              >Pexels Api</a
-            >
-            for the illustrations.
-          </p>
-          <span class="tech-tag">React</span>
-          <span class="tech-tag">Bootstrap</span>
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">Javascript</span>
-          <span class="tech-tag">API</span>
-          <div class="btn-wrapper text-center">
-            <a
-              href="https://musing-mirzakhani-5a41de.netlify.app/"
-              target="_blank"
-              class="d-inline-block btn px-4 py-2 my-3"
-              title="Open Dictionary project"
-              >See project</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-md-6 my-auto">
-          <h3 class="text-white">Weather app</h3>
-          <br />
-          <p class="project-description">
-            As part of the
-            <a
-              href="https://www.shecodes.io/workshops"
-              target="_blank"
-              class="highlight"
-              title="SheCodes workshop"
-              >SheCodes Plus workshop</a
-            >, I created a weather application based in HTML, CSS and
-            Javascript. It uses weather information gathered from
-            <a
-              href="https://openweathermap.org/api"
-              target="_blank"
-              class="highlight"
-              title="Open Weather Map"
-              >Open Weather Map</a
-            >
-            APIs.
-          </p>
-          <span class="tech-tag">Bootstrap</span>
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">Javascript</span>
-          <span class="tech-tag">API</span>
-          <div class="btn-wrapper text-center">
-            <a
-              href="https://sharp-dijkstra-8b8a86.netlify.app/"
-              target="_blank"
-              class="d-inline-block btn px-4 py-2 my-3"
-              title="Open weather app"
-              >See project</a
-            >
-          </div>
-        </div>
-        <div class="col-md-6 project-preview my-auto">
-          <img
-            src="images/weather-app.png"
-            alt="Picture of weather app project"
-            class="rounded img-fluid"
-          />
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-md-6 project-preview my-auto">
-          <img
-            src="images/memory-game.png"
-            alt="Picture of memory game project"
-            class="rounded img-fluid"
-          />
-        </div>
-        <div class="col-md-6 my-auto">
-          <h3 class="text-white">Memory game</h3>
-          <br />
-          <p class="project-description">
-            Since I discovered programming, I've always enjoyed making fun
-            content, especially games. Creating a Memory Game was a challenge I
-            set for myself to practice my HTML, CSS, Bootstrap and Javascript
-            skills.
-          </p>
-          <span class="tech-tag">Bootstrap</span>
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">Javascript</span>
-          <div class="btn-wrapper text-center">
-            <a
-              href="https://epic-ritchie-b606eb.netlify.app/"
-              target="_blank"
-              class="d-inline-block btn px-4 py-2 my-3"
-              title="Open memory game"
-              >See project</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="row mt-3 mb-3">
-        <div class="col-md-6 my-auto">
-          <h3 class="text-white">Favorite books</h3>
-          <br />
-          <p class="project-description">
-            This page is my first official coding project and was an assignment
-            part of the
-            <a
-              href="https://www.shecodes.io/workshops"
-              target="_blank"
-              class="highlight"
-              title="SheCodes workshop"
-              >SheCodes Basics workshop</a
-            >, which was about creating a page about a topic we are passionate
-            about. It is based in HTML, CSS, Bootstrap and Javascript.
-          </p>
-          <span class="tech-tag">Bootstrap</span>
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">Javascript</span>
-          <div class="btn-wrapper text-center">
-            <a
-              href="https://epic-brahmagupta-f93dcc.netlify.app/"
-              target="_blank"
-              class="d-inline-block btn px-4 py-2 my-3"
-              title="Open favorite books page"
-              >See project</a
-            >
-          </div>
-        </div>
-        <div class="col-md-6 project-preview my-auto">
-          <img
-            src="images/favorite-books.png"
-            alt="Picture of favorite books project"
-            class="rounded img-fluid"
-          />
         </div>
       </div>
     </div>
@@ -383,5 +168,6 @@
         by Clara Dérot
       </p>
     </footer>
+    <script src="/app.js"></script>
   </body>
 </html>
